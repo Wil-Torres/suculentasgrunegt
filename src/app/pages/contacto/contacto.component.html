@@ -1,0 +1,40 @@
+<div class="container padding-large fondo-contacto">
+  <div class="row text-center padding-24" style="margin:0 -16px">
+    <div class="col-md-4 fondo-contacto-opciones">
+      <p>
+        <i class="fa fa-envelope font-25"></i>
+      </p>
+      <p>suculentasgrune@gmail.com</p>
+    </div>
+    <div class="col-md-4 fondo-contacto-principal">
+      <p>
+        <i class="fa fa-map-marker font-25"></i>
+      </p>
+      <p>Guatemala, Ciudad</p>
+    </div>
+    <div class="col-md-4 fondo-contacto-opciones">
+      <p>
+        <i class="fa fa-phone font-25"></i>
+      </p>
+      <p>0000-0000</p>
+    </div>
+  </div>
+  <hr>
+  <form action="mailto:someone@example.com" method="post" (ngSubmit)="guardar()" enctype="text/plain">
+    <div class="form-group">
+      <label for="nombre">Nombre Completo</label>
+      <input type="text" class="form-control" id="nombre" placeholder="Ingresa tu nombre completo" required [(ngModel)]="objeto.nombre"
+        [ngModelOptions]="{standalone: true}">
+    </div>
+    <div class="form-group">
+      <label for="email">Correo Electronico</label>
+      <input type="email" class="form-control" id="email" placeholder="Ingresa tu correo electronico" required [(ngModel)]="objeto.correo"
+        [ngModelOptions]="{standalone: true}">
+    </div>
+    <div class="form-group">
+      <label for="mensaje">Mensaje</label>
+      <input type="text" class="form-control" id="mensaje" placeholder="Escribenos..." required [(ngModel)]="objeto.mensaje" [ngModelOptions]="{standalone: true}">
+    </div>
+    <button type="submit" class="btn boton-negro"><i class="fa fa-paper-plane w3-margin-right"></i>Enviar</button>
+  </form>
+</div>

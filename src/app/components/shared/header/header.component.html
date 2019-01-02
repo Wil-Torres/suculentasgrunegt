@@ -1,0 +1,62 @@
+<!-- NavBar begin -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light color-navbar">
+  <a class="navbar-brand" routerLinkActive="active" routerLink="/galeria">
+    <img src="https://firebasestorage.googleapis.com/v0/b/suculentasgrunegt.appspot.com/o/gruneWhite.png?alt=media&token=6ba74a4c-4a85-4ed0-98f0-0752007d6e70"
+      class="d-inline-block align-top" alt="" style="width: 75px; height: 60px;">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item  active">
+        <a class="nav-link fuente" routerLinkActive="active" routerLink="/galeria">PORTFOLIO
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item" *ngIf="usuario.length !== 0">
+        <a class="nav-link fuente" routerLinkActive="active" routerLink="/lista-galeria">MANTENIMIENTO
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link fuente" routerLinkActive="active" routerLink="/nosotros">ACERCA DE NOSOTROS</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link fuente" routerLinkActive="active" routerLink="/contactanos">CONTACTANOS</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav my-lg-0">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <img *ngIf="usuario.length !== 0" [src]="usuario.photoURL" alt="user" class="profile-pic gb_bb">
+          <img *ngIf="usuario.length === 0" src="https://firebasestorage.googleapis.com/v0/b/suculentasgrunegt.appspot.com/o/configuracion%2Fxxx.jpg?alt=media&token=1168fff8-8a7b-49bc-aa10-755ab768b21e"
+            alt="user" class="profile-pic gb_bb">
+        </a>
+        <div class="dropdown-menu dropdown-menu-right animated flipInY">
+          <ul class="dropdown-user">
+            <li>
+              <div class="dw-user-box">
+                <div class="u-text">
+                  <h4>{{ usuario.displayName }}</h4>
+                  <p class="text-muted"> {{usuario.email}}</p>
+                </div>
+              </div>
+            </li>
+            <li *ngIf="usuario.length !== 0">
+              <a (click)="cerrarSesion()" class="pointer">
+                <i class="fa fa-power-off"></i> Logout {{usuario.length | json}}</a>
+            </li>
+            <li *ngIf="usuario.length === 0 || usuario.length === null">
+              <a (click)="login()" class="pointer">
+                <i class="fa fa-power-off"></i> Login</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+<!-- NavBar END -->

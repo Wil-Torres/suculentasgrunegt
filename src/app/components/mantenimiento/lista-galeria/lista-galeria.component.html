@@ -1,0 +1,50 @@
+<div class="row animated fadeIn">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <h3 class="card-title">Galeria de Suculentas</h3>
+        <span class="btn btn-primary btns pull-right" (click)="agregarGaleria()" data-toggle="tooltip" title="Nuevo">
+          <i class="fa fa-plus"></i>
+        </span>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Imagen</th>
+              <th>Nombre</th>
+              <th>Descripcion</th>
+              <th>Precio</th>
+              <th>Descuento</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let obj of objeto">
+              <td class="w70">
+                <img [src]="obj.url" class="img-50 img-circle pointer">
+              </td>
+              <td>{{obj.nombre}}</td>
+              <td>{{obj.descripcion}}</td>
+              <td>{{obj.precio}}
+                <td>{{obj.descuento}}</td>
+                <td>
+                  <button class="btn btn-primary" (click)="mostrarModal(obj.id)">
+                    <i class="fa fa-edit"></i>
+                  </button>
+                  <button class="btn btn-danger">
+                    <i class="fa fa-trash-o" (click)="borrar(obj)"></i>
+                  </button>
+                </td>
+            </tr>
+          </tbody>
+        </table>
+        <button class="btn btn-secundary" (click)="cambiarDesde(-5)">
+          Anteriores
+        </button>
+        <button class="btn btn-secundary" (click)="cambiarDesde(5)">
+          Siguientes
+        </button>
+
+      </div>
+    </div>
+  </div>
+</div>

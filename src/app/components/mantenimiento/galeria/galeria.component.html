@@ -1,0 +1,25 @@
+<div class="row">
+  <!--div class="col-md-4" *ngFor="let obj of objeto">
+    <div class="card">
+      <img class="card-img-top" [src]="obj.url" alt="">
+      <p></p>
+    </div>
+  </div-->
+  <div class="col-md-4" *ngFor="let obj of objeto">
+    <div class="card team-img">
+      <img class="card-img-top" [src]="obj.url" alt="Card image cap">
+      <div class="team-content">
+        <h4 class="text-white mb0">{{obj.nombre}}</h4>
+        <p class="team-meta">{{obj.precio}}</p>
+      </div>
+      <p></p>
+      <div class="overlay">
+        <div class="text">
+          <h4 class="mb0 text-white">{{obj.nombre}}</h4>
+          <p class="mb30 team-meta">{{obj.precio}}</p>
+          <p>{{obj.descripcion}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

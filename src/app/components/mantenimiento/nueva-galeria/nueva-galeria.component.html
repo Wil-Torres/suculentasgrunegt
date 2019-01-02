@@ -1,0 +1,59 @@
+<div class="row">
+  <div class="col-md-12">
+    <h2 class="text-center">
+      <span>{{tituloVista}}</span>
+    </h2>
+    <p class="text-center">{{subtituloVista}}</p>
+    <span class="float-right">
+      <button type="button" class="btn btn-primary" data-toggle="tooltip" title="Guardar" (click)="guardarGaleria(objeto.img)">
+        <i class="fa fa-save"></i>
+      </button>
+    </span>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <app-file-upload [path]="path" [obj1]="objeto" (obj)="objeto"></app-file-upload>
+  </div>
+  <div class="col-md-6">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="form-group">
+          <label for="codigo">Código</label>
+          <input class="form-control" type="number" id="codigo" [(ngModel)]="objeto.codigo" [ngModelOptions]="{standalone: true}">
+        </div>
+      </div>
+      <div class="col-md-9">
+        <div class="form-group">
+          <label for="nombre">Nombre de Planta</label>
+          <input class="form-control" type="text" id="nombre" [(ngModel)]="objeto.nombre" [ngModelOptions]="{standalone: true}">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <label for="descripcion">Descripcion</label>
+          <textarea class="form-control" id="descripcion" [(ngModel)]="objeto.descripcion" [ngModelOptions]="{standalone: true}">
+          </textarea>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="form-group">
+          <label for="precio">Precio</label>
+          <input class="form-control" type="number" id="precio" [(ngModel)]="objeto.precio" [ngModelOptions]="{standalone: true}">
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group">
+          <label for="descuento">Descuento</label>
+          <input class="form-control" type="number" id="descuento" [(ngModel)]="objeto.descuento" [ngModelOptions]="{standalone: true}">
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>

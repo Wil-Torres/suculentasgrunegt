@@ -12,37 +12,64 @@ body,h1,h2,h3,h4,h5,h6 {
     padding: 12px 24px!important;
 }
 .body-fondo {
-    color: #000!important;
+    color: #f1f1f1!important;
     background-color: #f1f1f1!important;
 }
-.fondo-contacto{
-    color: #000!important;
-    background-color: #9e9e9e!important;
+
+
+/* Submenu item*/
+#sidebar-container .list-group .sidebar-submenu a {
+    height: 45px;
+    padding-left: 30px;
 }
-.fondo-contacto-opciones{
-    color: #fff!important;
-    background-color: #616161!important;
+.sidebar-submenu {
+    font-size: 12px;
 }
-.fondo-contacto-principal {
-    color: #fff!important;
-    background-color: #009688!important;
+
+/* Separators */
+.sidebar-separator-title {
+    background-color: #333;
+    height: 35px;
 }
-.boton-negro{
-    color: #fff!important;
-    background-color: #000!important;
+.sidebar-separator {
+    background-color: #333;
+    height: 25px;
 }
-.boton-negro:hover{
-    color: #000!important;
-    background-color: #ccc!important;
+.logo-separator {
+    background-color: #333;    
+    height: 60px;
 }
-.pd-24{
-    padding-top: 24px!important;
-    padding-bottom: 24px!important;
+
+/* Closed submenu icon */
+#sidebar-container .list-group .list-group-item[aria-expanded="false"] .submenu-icon::after {
+  content: " \f0d7";
+  font-family: FontAwesome;
+  display: inline;
+  text-align: right;
+  padding-left: 10px;
 }
-.pd-16{
-    padding-top: 16px!important;
-    padding-bottom: 16px!important;
+/* Opened submenu icon */
+#sidebar-container .list-group .list-group-item[aria-expanded="true"] .submenu-icon::after {
+  content: " \f0da";
+  font-family: FontAwesome;
+  display: inline;
+  text-align: right;
+  padding-left: 10px;
 }
-.font-25{
-    font-size: 25px!important
+.color-navbar{
+    background-color: #AB3589 !important;
+    color: white!important;
 }
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255,255,255)!important;
+}
+.tamanio-social{
+    font-size: 30px;
+}
+.fa.fa-instagram {
+	color: transparent;
+	background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+	background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+	background-clip: text;
+	-webkit-background-clip: text;
+  }

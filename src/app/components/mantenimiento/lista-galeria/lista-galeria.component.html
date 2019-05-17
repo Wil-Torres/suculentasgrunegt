@@ -25,25 +25,18 @@
               <td>{{obj.nombre}}</td>
               <td>{{obj.descripcion}}</td>
               <td>{{obj.precio}}
-                <td>{{obj.descuento}}</td>
-                <td>
-                  <button class="btn btn-primary" (click)="mostrarModal(obj.id)">
-                    <i class="fa fa-edit"></i>
-                  </button>
-                  <button class="btn btn-danger">
-                    <i class="fa fa-trash-o" (click)="borrar(obj)"></i>
-                  </button>
-                </td>
+              <td>{{obj.descuento}}</td>
+              <td>
+                <button class="btn btn-primary" (click)="mostrarModal(obj.id)">
+                  <i class="fa fa-edit"></i>
+                </button>
+                <button class="btn btn-danger">
+                  <i class="fa fa-trash-o" (click)="borrar(obj)"></i>
+                </button>
+              </td>
             </tr>
           </tbody>
         </table>
-        <button class="btn btn-secundary" (click)="cambiarDesde(-5)">
-          Anteriores
-        </button>
-        <button class="btn btn-secundary" (click)="cambiarDesde(5)">
-          Siguientes
-        </button>
-
       </div>
     </div>
   </div>

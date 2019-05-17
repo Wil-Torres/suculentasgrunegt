@@ -79,6 +79,9 @@ export class FileUploadComponent implements OnInit {
     }
     this.imagenSubir = archivo;
     let reader = new FileReader();
+    var sizeByte = this.imagenSubir.size;
+    var sizekiloBytes = parseInt(sizeByte/1024);
+
     let urlImagenTemp = reader.readAsDataURL(archivo);
     reader.onloadend = () => {this.imagenTemp = reader.result.toString()};
     this.producto.img = event;

@@ -5,6 +5,7 @@ import { finalize } from 'rxjs/operators';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { Router } from '@angular/router';
 import { DOCUMENT } from '@angular/platform-browser';
+import swal from 'sweetalert';
 
 @Component({
   selector: 'app-nueva-galeria',
@@ -16,7 +17,17 @@ export class NuevaGaleriaComponent implements OnInit {
   path: string = "galeria";
   tituloVista: string = "CARGA DE GALERIA NUEVA";
   subtituloVista: string = "Al cargar la galeria asegurate de llenar toda la información";
-  objeto: any = {};
+  
+  private _objeto : any = {};
+  
+  public get objeto() : any {
+    return this._objeto;
+  }
+  public set objeto(v : any) {
+    console.log(v)
+    this._objeto = v;
+  }
+  
   producto: any = {};
   task: AngularFireUploadTask;
   porcentaje: Observable<number>;
@@ -44,7 +55,13 @@ export class NuevaGaleriaComponent implements OnInit {
     
   }
   guardarGaleria(event: FileList) {
+    console.log(this.objeto)
     const file = this.objeto.img.target.files[0];
+
+    /*if (this.objeto.ancho !== 500 && this.objeto.alto !== 750) {
+      swal('Ocurrio un problema','Tamaño de imagen no permitido' , 'error');
+      return;
+    }*/
     if (file.type.split('/')[0] !== 'image') {
       console.error('unsupported file type :( ');
       return;

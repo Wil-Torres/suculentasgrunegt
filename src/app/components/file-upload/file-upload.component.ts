@@ -11,7 +11,7 @@ import { finalize } from 'rxjs/operators';
 export class FileUploadComponent implements OnInit {
   @Input('path') public ubicacion:string='';
   @Input('obj1') public producto:any={}
-  @Output() obj: EventEmitter<any> = new EventEmitter();
+  @Output('obj') obj: EventEmitter<any> = new EventEmitter();
   @ViewChild('logo') logo: ElementRef;
 
   task: AngularFireUploadTask;
@@ -79,15 +79,13 @@ export class FileUploadComponent implements OnInit {
     }
     this.imagenSubir = archivo;
     let reader = new FileReader();
-    var sizeByte = this.imagenSubir.size;
-    var sizekiloBytes = parseInt(sizeByte/1024);
-
     let urlImagenTemp = reader.readAsDataURL(archivo);
     reader.onloadend = () => {this.imagenTemp = reader.result.toString()};
     this.producto.img = event;
   }
 
   onLoad() {
+    console.log('lectura de imagen');
     this.producto.ancho = (this.logo.nativeElement as HTMLImageElement).naturalWidth;
     this.producto.alto = (this.logo.nativeElement as HTMLImageElement).naturalHeight;
     this.obj.emit(this.producto);

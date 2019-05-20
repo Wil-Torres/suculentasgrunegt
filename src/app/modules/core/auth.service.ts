@@ -41,18 +41,14 @@ export class AuthGService {
     return this.oAuthLogin(provider);
   }
   private oAuthLogin(provider) {
-    return this.afsAuth.auth.signInWithPopup(provider).then((credenciales) => {
-      this.updateUserData(credenciales.user)
-    })
+    return new Promise ((resolve, reject) => {
+      this.afsAuth.auth.signInWithPopup(provider).then((credenciales) => {
+        resolve(this.updateUserData(credenciales.user));
+      })
+    }) 
   }
   updateUserData(user) {
-
     const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);
-    userRef.valueChanges().subscribe(resp=> {
-      if ( resp.email === user.email) {
-        return resp
-      }
-    })
-    
+    return userRef.valueChanges();
   }
 }

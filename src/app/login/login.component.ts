@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthGService } from '../modules/core/auth.service';
 import { AuthService } from '../services/auth.service';
+import { zip } from 'rxjs';
+import swal from 'sweetalert';
 
 @Component({
   selector: 'app-login',
@@ -32,8 +34,13 @@ export class LoginComponent implements OnInit {
   }
   
   ingresarGoogle () {
-    this.srvAuth.googleLogin().then( res => {
+    this.srvAuth.googleLogin().then( (res:any) => {
       console.log(res)
+      let x = res.subscribe(resp => {
+        localStorage.setItem('usuarioLogeado', JSON.stringify(resp));
+        this.router.navigate(['/']);
+        x.unsubscribe();
+      })
     }, err => {
       console.log(err)
     })

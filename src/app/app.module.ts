@@ -17,11 +17,13 @@ import { environment } from '../environments/environment';
 import { APP_ROUTES } from './app.routes';
 import { PagesModule } from './pages/pages.module';
 import { LoginComponent } from './login/login.component';
+import { UploadDirective } from './directivas/upload.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    UploadDirective
   ],
   imports: [
     BrowserModule,
@@ -33,7 +35,7 @@ import { LoginComponent } from './login/login.component';
     AngularFireDatabaseModule,
     AngularFirestoreModule,
     AngularFireStorageModule,
-    AngularFireAuthModule,
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

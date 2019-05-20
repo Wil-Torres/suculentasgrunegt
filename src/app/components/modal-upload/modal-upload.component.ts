@@ -13,6 +13,7 @@ export class ModalUploadComponent implements OnInit {
   imagenSubir: File;
   imagenTemp: string;
   objeto: any = {};
+  oculto: string;
 
   constructor(public srvModal: ServicioModalService, public srvMant: SucugruneService) { }
 
